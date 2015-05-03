@@ -9,7 +9,7 @@ import scipy.misc as misc
 import skimage.io as io
 
 default_image = misc.lena()
-save_as = "/home/himanshu/lena-scaled.png"
+save_as = "/home/user/lena-scaled.png"
 
 
 class Scale():
