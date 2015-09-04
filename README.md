@@ -50,5 +50,5 @@ In this matrix the middle value 5 is replaced by the median of all the elements 
 #### Input Image
 ![Input] (http://i.imgur.com/GfF9JTa.png)
 
-#### Output Image
+#### Output Image after convolving with a median filter of shape 3 x 3
 ![output] (http://i.imgur.com/6VYIIqS.png)
