@@ -56,3 +56,27 @@ In this matrix the middle value 5 is replaced by the median of all the elements 
 
 #### Output Image after convolving with a median filter of shape 3 x 3
 ![output] (http://i.imgur.com/6VYIIqS.png)
+
+
+##Sobel Operator
+
+
+A 3 x 3 vector that when convolved with image gives an extimate of gradient in either x-direction or y-direction.  
+
+
+			"""Gx = [[-1, 0, 1],  
+					[-2, 0, 2],  
+					[-1, 0, 1]]""" 
+				
+			"""Gy = [[-1, -2, -1],  
+					[0, 0, 0],  
+					[1, 2, 1]]"""
+				
+When Gx is convolved with the image it gives approximate gradient in x direction and when Gy is convolved with image it approximates gradient in y-direction.
+
+### Input Image  
+![Input image](http://i.imgur.com/vOXyzGG.png)
+
+
+### Output Image  
+![Output image](http://i.imgur.com/bbB2WqF.png)
