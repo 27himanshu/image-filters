@@ -41,10 +41,14 @@ In linear scaling we add a number of points between two points such that the poi
 
 An n x n kernel is convolved with image.  
 Each pixel of the image is replaced by the median value of the kernel. It is effective in reducing salt-pepper noise.  
-For example consider the following 2D matrix  
-				[[12, 15, 9],  
-				 [3, 5, 10],  
-				 [7, 8, 11]]  
+For example consider the following 2D matrix 
+
+
+			"""[[12, 15, 9],  
+				[3, 5, 10],  
+				[7, 8, 11]]"""    
+
+
 In this matrix the middle value 5 is replaced by the median of all the elements of the matrix i.e. 9
 
 #### Input Image
