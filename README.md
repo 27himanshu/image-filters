@@ -79,4 +79,15 @@ When Gx is convolved with the image it gives approximate gradient in x direction
 
 
 ### Output Image  
-![Output image](http://i.imgur.com/bbB2WqF.png)
+![Output image](http://i.imgur.com/bbB2WqF.png)  
+
+
+##Histogram Equalization  
+Histogram of an image with poor contrast has most of its intensity levels very closely spaced in a small area. To improve contrast replace intensity values with their corrosponding cmf values. This relults in a very well distributed histogram. This method works well with images having backgrounds and foregrounds that are both bright or both dark.
+
+### Input Image  
+![Input image](http://i.imgur.com/vOXyzGG.png)
+
+
+### Output Equalized Image  
+![Output image] (http://i.imgur.com/kW87ggW.png)
