@@ -91,5 +91,5 @@ Histogram of an image with poor contrast has most of its intensity levels very c
 
 ### Output Equalized Image  
 ![Output image] (http://i.imgur.com/kW87ggW.png)  
-### Histograms of bot images  
+### Histograms of both images  
 ![Histograms] (http://i.imgur.com/aPRzvoq.png)
