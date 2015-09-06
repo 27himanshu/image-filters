@@ -12,6 +12,7 @@ both bright or both dark.
 import scipy.misc as misc
 import numpy as np
 import itertools
+import matplotlib.pyplot as plt
 
 
 class HistogramEqualize():
@@ -52,3 +53,16 @@ save_as="/home/user/equalized.png"
 equalizer=HistogramEqualize()
 eq_image=equalizer.equalize(default_image, depth=8)
 misc.imsave(save_as, eq_image)
+
+"""Plots of histograms"""
+plt.figure(1)
+plt.subplot(2,1,1)
+plt.hist(default_image.flatten(), bins=40,  normed=True)
+plt.ylabel('Probability')
+plt.title('Unequalized Histogram')
+plt.show()
+plt.subplot(2,1,2)
+plt.hist(eq_image.flatten(), bins=40, color='r', normed=True)
+plt.ylabel('Probability')
+plt.title('Equalized Histogram')
+plt.show()
