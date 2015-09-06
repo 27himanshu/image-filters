@@ -27,7 +27,7 @@ class HistogramEqualize():
         return pdf
         
     def get_cdf(self, pdf):
-        """return UNNORMALIZED cumulative density function of the given p.m.f
+        """Returns UNNORMALIZED cumulative density function of the given p.m.f
         depth = bits per pixels"""
         cdf=np.zeros((pdf.shape[0]), dtype=int)
         cdf[0]=pdf[0]        
