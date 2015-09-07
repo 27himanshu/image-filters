@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Image-filters : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Image-filters</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/27himanshu/image-filters">View on GitHub</a>
+
+          <h1 id="project_title">Image-filters</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/27himanshu/image-filters/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/27himanshu/image-filters/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="image-filters" class="anchor" href="#image-filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Image Filters</h1>
+
+<p>Implementation of some basic image processing filters in python.<br>
+The following python libraries are used:<br>
+1. Numpy
+2. Scipy</p>
+
+<h2>
+<a id="linear-scaling" class="anchor" href="#linear-scaling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Scaling</h2>
+
+<p>An image is scaled first row-wise then colum-wise or vice-versa.  </p>
+
+<pre><code>    """Linear scaling of all the rows of an image.
+    An example of scaling of row is:
+        k=3
+        input = [[15, 30, 15],
+                [30, 15, 30]]
+        scaled_output =
+                [[15, 20, 25, 30, 25, 20, 15],
+                 [30, 25, 20, 15, 20, 25, 30]]
+        (k-1) elements are inserted between each of two elements of every
+        row"""  
+</code></pre>
+
+<p>In linear scaling we add a number of points between two points such that the points added lies on the line joining the two original points.  </p>
+
+<pre><code>  """Linear scaling of all the columns of the image.
+    An example of scaling of columns is:
+        k=3
+        input = [[15, 30, 15],
+                 [30, 15, 30]]
+        scaled_output =
+                [[15, 30, 15],
+                 [20, 25, 20],
+                 [25, 20, 25]
+                 [30, 15, 30]]"""  
+</code></pre>
+
+<h4>
+<a id="input-image-512x512" class="anchor" href="#input-image-512x512" aria-hidden="true"><span class="octicon octicon-link"></span></a>Input image (512x512)</h4>
+
+<p><img src="http://i.imgur.com/vOXyzGG.png" alt="Input image"></p>
+
+<h4>
+<a id="output-image-scaled-by-the-factor-of-2-1023x1023" class="anchor" href="#output-image-scaled-by-the-factor-of-2-1023x1023" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output image scaled by the factor of 2 (1023x1023)</h4>
+
+<p><img src="http://i.imgur.com/iKYA4iB.png" alt="Output image"></p>
+
+<h2>
+<a id="median-filter" class="anchor" href="#median-filter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Median Filter</h2>
+
+<p>An n x n kernel is convolved with image.<br>
+Each pixel of the image is replaced by the median value of the kernel. It is effective in reducing salt-pepper noise.<br>
+For example consider the following 2D matrix </p>
+
+<pre><code>        """[[12, 15, 9],  
+            [3, 5, 10],  
+            [7, 8, 11]]"""    
+</code></pre>
+
+<p>In this matrix the middle value 5 is replaced by the median of all the elements of the matrix i.e. 9</p>
+
+<h4>
+<a id="input-image" class="anchor" href="#input-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Input Image</h4>
+
+<p><img src="http://i.imgur.com/GfF9JTa.png" alt="Input"></p>
+
+<h4>
+<a id="output-image-after-convolving-with-a-median-filter-of-shape-3-x-3" class="anchor" href="#output-image-after-convolving-with-a-median-filter-of-shape-3-x-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output Image after convolving with a median filter of shape 3 x 3</h4>
+
+<p><img src="http://i.imgur.com/6VYIIqS.png" alt="output"></p>
+
+<h2>
+<a id="sobel-operator" class="anchor" href="#sobel-operator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sobel Operator</h2>
+
+<p>A 3 x 3 vector that when convolved with image gives an extimate of gradient in either x-direction or y-direction.  </p>
+
+<pre><code>        """Gx = [[-1, 0, 1],  
+                [-2, 0, 2],  
+                [-1, 0, 1]]""" 
+
+        """Gy = [[-1, -2, -1],  
+                [0, 0, 0],  
+                [1, 2, 1]]"""
+</code></pre>
+
+<p>When Gx is convolved with the image it gives approximate gradient in x direction and when Gy is convolved with image it approximates gradient in y-direction.</p>
+
+<h3>
+<a id="input-image-1" class="anchor" href="#input-image-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Input Image</h3>
+
+<p><img src="http://i.imgur.com/vOXyzGG.png" alt="Input image"></p>
+
+<h3>
+<a id="output-image" class="anchor" href="#output-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output Image</h3>
+
+<p><img src="http://i.imgur.com/bbB2WqF.png" alt="Output image">  </p>
+
+<h2>
+<a id="histogram-equalization" class="anchor" href="#histogram-equalization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Histogram Equalization</h2>
+
+<p>Histogram of an image with poor contrast has most of its intensity levels very closely spaced in a small area. To improve contrast replace intensity values with their corrosponding cmf values. This relults in a very well distributed histogram. This method works well with images having backgrounds and foregrounds that are both bright or both dark.</p>
+
+<h3>
+<a id="input-image-2" class="anchor" href="#input-image-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Input Image</h3>
+
+<p><img src="http://i.imgur.com/vOXyzGG.png" alt="Input image"></p>
+
+<h3>
+<a id="output-equalized-image" class="anchor" href="#output-equalized-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output Equalized Image</h3>
+
+<p><img src="http://i.imgur.com/kW87ggW.png" alt="Output image">  </p>
+
+<h3>
+<a id="histograms-of-both-images" class="anchor" href="#histograms-of-both-images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Histograms of both images</h3>
+
+<p><img src="http://i.imgur.com/aPRzvoq.png" alt="Histograms"></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Image-filters maintained by <a href="https://github.com/27himanshu">27himanshu</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
